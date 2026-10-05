@@ -22,16 +22,27 @@ Exactly three core features for the first playable version, plus one future feat
 Use the approved AI tool to review ONE planning or starter-code decision.
 
 **My prompt (focused, with context):**
+I'm building a small adventure game in Python with Pygame where the player moves between locations, collects items, and tracks a score. Should I store the player's location and score using plain variables, a dictionary, or a class? I'm leaning toward using a dictionary because it keeps related information together and seems easier for me as a beginner. I also want the game to stay simple for the first version, but I may add enemies later. Which option would be the best choice and why?
 
 **The AI recommendation (summarized as separate claims):**
+1. Plain variables are simple but can become harder to manage when the game gets bigger.
+2. A dictionary keeps the player's information together in one place.
+3. A class can organize both data and actions, but it requires more setup.
+4. A dictionary can work for the first version and be changed to a class later if needed.
 
 **Claim I verified and the documentation I used (link or citation):**
+I verified the claim that a dictionary stores information using keys and values.
+
+https://docs.python.org/3/tutorial/datastructures.html#dictionaries
 
 **The evidence, in my own words:**
+The Python documentation shows that dictionary values can be accessed by using their keys, such as player["score"]. It also shows that values can be changed by assigning a new value to a key. This supports using a dictionary because I can keep the player's location, score, and items together and update them when the game changes.
 
 **My decision (accept / revise / verify further / reject) and why:**
+I accept the recommendation. I am going to use a dictionary because it is simple enough for me as a beginner and keeps the player information organized. I know I may need to change it to a class later when I add enemies, and I am comfortable doing that if the game becomes more complex.
 
 **What changed in the repository because of this decision:**
+No code changed yet. In game.py I will store the player as a dictionary with location, score, and items.
 
 -> **Commit 2: "AI review documented"**
 
