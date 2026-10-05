@@ -6,15 +6,15 @@ Make **Commit 1, 2, and 3** at the checkpoints below, then record your **Walk Me
 ## Game concept (complete BEFORE any AI use)
 What the player does, what the game responds to, and what the player is trying to accomplish (3-5 sentences):
 
-(your concept here)
+My game is a simple adventure game where the player explores different areas and collects useful items. The game responds to the player's choices, such as where they move and which items they pick up. The player is trying to collect the required items and reach the final area to win.
 
 ## Feature plan (complete BEFORE any AI use)
 Exactly three core features for the first playable version, plus one future feature:
 
-1. Core feature:
-2. Core feature:
-3. Core feature:
-- Future feature (not built yet):
+1. Core feature: Move between locations
+2. Core feature: Collect items
+3. Core feature: Track player score
+- Future feature (not built yet): Add enemies
 
 -> **Commit 1: "Game concept and feature plan (pre-AI)"**
 
