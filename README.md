@@ -52,7 +52,7 @@ Complete game.py. Confirm: window opens with your title, stays open, closes clea
 ## Final reflection
 You remain responsible for this repository even with AI support. What is one thing in this repo you could now explain to another student without help?
 
-(your reflection here)
+I can now explain how the Pygame game loop keeps the window open and how pygame.QUIT lets the program close cleanly when the player clicks the X.
 
 -> **Commit 3: "Working starter code and reflection"**
 
