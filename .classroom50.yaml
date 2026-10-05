@@ -1,0 +1,12 @@
+schema: "classroom50/repo-config/v1"
+classroom: "poly1203-fa26-699"
+assignment: "github-lab-game-planning-ai"
+owner:
+  username: "Johnnymtruong"
+  id: 144070199
+  accepted_at: "2026-10-05T02:33:03Z"
+source:
+  owner: "ou-poly1203-fa26"
+  owner_id: 319997346
+  repo: "poly1203-m6-game-planning-ai-review"
+  branch: "main"
