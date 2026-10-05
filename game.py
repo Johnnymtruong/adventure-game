@@ -10,12 +10,19 @@
 
 import pygame
 
-# TODO: initialize pygame
-# TODO: create the 800x600 window and set your game title with pygame.display.set_caption()
+pygame.init()
 
-# TODO: game loop
-#   - check events: if the event type is pygame.QUIT, end the loop
-#   - fill the background with a color
-#   - update the display with pygame.display.flip()
+screen = pygame.display.set_mode((800, 600))
+pygame.display.set_caption("Adventure Game")
 
-# TODO: quit pygame cleanly after the loop ends
+running = True
+
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    screen.fill((255, 255, 255))
+    pygame.display.flip()
+
+pygame.quit()
