@@ -15,6 +15,12 @@ pygame.init()
 screen = pygame.display.set_mode((800, 600))
 pygame.display.set_caption("Adventure Game")
 
+player = {
+    "location": "forest",
+    "score": 0,
+    "items": []
+}
+
 running = True
 
 while running:
