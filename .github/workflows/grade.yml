@@ -1,0 +1,21 @@
+name: Autograding feedback
+on: [push]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Commit checkpoint count
+        run: |
+          COUNT=$(git rev-list --count HEAD)
+          echo "Total commits (including the starter commit): $COUNT"
+          if [ "$COUNT" -lt 4 ]; then
+            echo "::warning::Fewer than 3 student commits so far. This lab requires at least 3 meaningful commits at the checkpoints in the README."
+          fi
+      - name: Run lab checks
+        run: python tests/check.py
