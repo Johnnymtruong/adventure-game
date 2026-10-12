@@ -66,3 +66,33 @@ Then record and submit the **Walk Me Through Your Review** video.
 
 ## AI Support Note (Modules 7-8)
 (record material AI-supported decisions here as the project continues)
+## Module 7: Core Mechanic and Tests
+
+### Mechanic: Collect items and track score
+When the player presses the E key, the game checks whether the player's
+current location still has an item. If it does, the item is removed from
+the world, added to the player's items, and its point value is added to
+the score. If there is nothing left, the game shows "Nothing here to pick up."
+
+### Code responsibilities
+| Responsibility | Where it lives in game.py |
+|---|---|
+| State | `player`, `world`, and `item_values` dictionaries |
+| Input | `KEYDOWN` check for the E key in the event loop |
+| Update | `pick_up_item()` function |
+| Draw | `font.render(...)` and `screen.blit(...)` lines |
+
+### Test results
+| # | Type | Steps | Expected result | Actual result | Pass/Fail |
+|---|---|---|---|---|---|
+| 1 | Positive | Start the game, press E once | "You picked up the key", Score: 10, Items: key | Matched expected | Pass |
+| 2 | Negative | Press E a second time | "Nothing here to pick up", score stays 10 | Matched expected | Pass |
+| 3 | Boundary | Fresh run, press E [3 or 5] times | Score stays 10, Items shows only key | [what you saw] | [Pass/Fail] |
+| 4 | Negative | Fresh run, press Q | Nothing changes | Nothing changed | Pass |
+| 5 | Regression | Close the window with the X | Closes with no error | [what you saw] | [Pass/Fail] |
+
+### Notes
+- Moving between locations is not built yet, so the cave's map cannot be
+  picked up in this version.
+- Installed `pygame-ce` instead of `pygame` because regular pygame would not
+  install on Python 3.14.
