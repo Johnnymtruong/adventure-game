@@ -21,6 +21,12 @@ player = {
     "items": []
 }
 
+world = {
+    "forest": ["key"],
+    "cave": ["map"]
+}
+
+font = pygame.font.Font(None, 36)
 running = True
 
 while running:
@@ -29,6 +35,10 @@ while running:
             running = False
 
     screen.fill((255, 255, 255))
+    location_text = font.render("Location: " + player["location"], True, (0, 0, 0))
+    screen.blit(location_text, (20, 20))
+    score_text = font.render("Score: " + str(player["score"]), True, (0, 0, 0))
+    screen.blit(score_text, (20, 60))
     pygame.display.flip()
 
 pygame.quit()
