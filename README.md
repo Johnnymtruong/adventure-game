@@ -52,7 +52,7 @@ Complete game.py. Confirm: window opens with your title, stays open, closes clea
 ## Final reflection
 You remain responsible for this repository even with AI support. What is one thing in this repo you could now explain to another student without help?
 
-(your reflection here)
+What is one thing in this repo you could now explain to another student without help?
 
 -> **Commit 3: "Working starter code and reflection"**
 
