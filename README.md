@@ -3,6 +3,13 @@
 This repository is YOUR game project. You will keep working in it during Modules 7 and 8.
 Make **Commit 1, 2, and 3** at the checkpoints below, then record your **Walk Me Through Your Review** video.
 
+## How to run
+1. Install Python 3.
+2. Install Pygame: `pip install pygame-ce`
+3. Run the game: `python game.py`
+
+**Controls:** Left/Right arrows move, E picks up an item, the X closes the game.
+
 ## Game concept (complete BEFORE any AI use)
 What the player does, what the game responds to, and what the player is trying to accomplish (3-5 sentences):
 
@@ -65,7 +72,15 @@ Then record and submit the **Walk Me Through Your Review** video.
 - If AI materially influences a later decision (Modules 7-8), document it in the AI Support Note section below.
 
 ## AI Support Note (Modules 7-8)
-(record material AI-supported decisions here as the project continues)
+### Module 8 – Movement Feature
+
+What I asked: I asked AI for help adding movement between the forest and cave.
+
+What it suggested: AI provided code for the movement function, location dictionary, arrow key controls, and help text.
+
+What I accepted, changed, or rejected, and why: I added the code to my game.py because it matched the dictionary approach I chose in Module 6.
+
+How I checked it: I ran the tests and tested the game myself. I learned that the 5-point run happened because I didn't collect the key first, showing that each item adds its own points. I also recorded a demo to show the feature working.
 
 ## Module 7: Core Mechanic and Tests
 
@@ -90,5 +105,24 @@ When the player presses the E key, the game checks whether the player's current 
 | 5 | Regression | Close the window with the X | Closes with no error | Matched expected | Pass |
 
 ### Notes
-- Moving between locations is not built yet, so the cave's map cannot be picked up in this version.
+- Moving between locations is not built yet, so the cave's map cannot be picked up in this version. (Fixed in Module 8, see below.)
 - Installed `pygame-ce` instead of `pygame` because regular pygame would not install on Python 3.14.
+
+## Module 8: Final Test Plan
+
+| # | Type | Steps | Expected result | Actual result | Pass/Fail |
+|---|---|---|---|---|---|
+| 1 | Positive | Fresh run, right arrow, E | Cave, map, Score: 5 | Matched expected | Pass |
+| 2 | Positive | Fresh run, E, right arrow, E | Score: 15, Items: key, map | Score: 15, Items: key, map | Pass |
+| 3 | Boundary | In the cave, press right arrow | "You can't go that way", stays in cave | "You can't go that way", stayed in cave | Pass |
+| 4 | Boundary | In forest, press left arrow | "You can't go that way", stays in forest | "You can't go that way", stayed in forest | Pass |
+| 5 | Regression | Pick up key, leave forest, come back, press E | "Nothing here to pick up", score doesn't change | "Nothing here to pick up", score stayed the same | Pass |
+| 6 | Regression | Move around, then click the X | Window closes with no error | Window closed, no error | Pass |
+
+### Retest of previously documented issue
+- **Issue (Module 7):** The cave's map couldn't be picked up because movement wasn't built.
+- **Fix:** Added a `connections` dictionary, a `move_player()` function, and arrow key input.
+- **Retest:** Test 2. Score went to 15 and Items showed key, map. The cave's map can now be picked up. Pass.
+
+### Polish
+- Added on-screen controls at the bottom of the window: "Arrows: move   E: pick up".
